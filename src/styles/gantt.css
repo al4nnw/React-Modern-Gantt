@@ -176,11 +176,10 @@
   height: calc(var(--rmg-header-height) + 1px);
 }
 
-/* Höherer Header für Minute/Hour/Day/Week View mit doppelten Timeline-Headern */
+/* Höherer Header für Minute/Hour/Day View mit doppelten Timeline-Headern */
 .rmg-gantt-chart[data-view-mode='minute'] .rmg-task-list-header,
 .rmg-gantt-chart[data-view-mode='hour'] .rmg-task-list-header,
-.rmg-gantt-chart[data-view-mode='day'] .rmg-task-list-header,
-.rmg-gantt-chart[data-view-mode='week'] .rmg-task-list-header {
+.rmg-gantt-chart[data-view-mode='day'] .rmg-task-list-header {
   height: calc(var(--rmg-header-height) * 2 + 2px);
 }
 
@@ -276,13 +275,11 @@
 /* Grid-Linien für Hour/Minute View */
 .rmg-timeline-grid[data-view-mode='minute'],
 .rmg-timeline-grid[data-view-mode='hour'] {
-  background-image: repeating-linear-gradient(
-    to right,
-    transparent,
-    transparent calc(var(--gantt-unit-width) - 1px),
-    var(--rmg-border-color) calc(var(--gantt-unit-width) - 1px),
-    var(--rmg-border-color) var(--gantt-unit-width)
-  );
+  background-image: repeating-linear-gradient(to right,
+      transparent,
+      transparent calc(var(--gantt-unit-width) - 1px),
+      var(--rmg-border-color) calc(var(--gantt-unit-width) - 1px),
+      var(--rmg-border-color) var(--gantt-unit-width));
 }
 
 .rmg-task-row {
@@ -416,9 +413,11 @@
   height: 4px;
   background-color: var(--rmg-progress-bg);
   border-radius: 2px;
-  overflow: visible; /* Changed from hidden to allow handle to overflow */
+  overflow: visible;
+  /* Changed from hidden to allow handle to overflow */
   cursor: pointer;
-  z-index: 5; /* Ensure progress bar is above task content but below handles */
+  z-index: 5;
+  /* Ensure progress bar is above task content but below handles */
 }
 
 .rmg-progress-fill {
@@ -432,11 +431,14 @@
 /* IMPROVED: Progress handle with better visibility and hitbox */
 .rmg-progress-handle {
   position: absolute;
-  right: -6px; /* Adjusted positioning */
+  right: -6px;
+  /* Adjusted positioning */
   top: 50%;
   transform: translateY(-50%);
-  height: 14px; /* Increased size */
-  width: 14px; /* Increased size */
+  height: 14px;
+  /* Increased size */
+  width: 14px;
+  /* Increased size */
   border-radius: 50%;
   background-color: white;
   border: 2px solid var(--rmg-task-color);
@@ -447,8 +449,10 @@
     opacity 0.2s ease,
     transform 0.15s ease,
     box-shadow 0.15s ease;
-  z-index: 1001; /* Very high z-index to be above everything */
-  pointer-events: auto; /* Ensure handle is interactive */
+  z-index: 1001;
+  /* Very high z-index to be above everything */
+  pointer-events: auto;
+  /* Ensure handle is interactive */
 }
 
 /* Show handle on task hover */
@@ -508,6 +512,7 @@
     opacity: 0;
     transform: translateX(50%) translateY(-5px);
   }
+
   to {
     opacity: 1;
     transform: translateX(50%) translateY(0);
@@ -653,7 +658,8 @@
 .rmg-timeline-container::-webkit-scrollbar-track {
   background: var(--rmg-scrollbar-track);
   border-radius: 12px;
-  margin: 0 6px; /* Add some space on the edges */
+  margin: 0 6px;
+  /* Add some space on the edges */
 }
 
 .rmg-timeline-container::-webkit-scrollbar-thumb {
@@ -661,7 +667,8 @@
   border-radius: 12px;
   border: 2px solid transparent;
   background-clip: content-box;
-  min-height: 40px; /* Minimum height for better usability */
+  min-height: 40px;
+  /* Minimum height for better usability */
   transition: background-color 0.2s ease;
 }
 
@@ -720,30 +727,39 @@
 .bg-blue-500 {
   background-color: #3b82f6;
 }
+
 .bg-indigo-500 {
   background-color: #6366f1;
 }
+
 .bg-purple-500 {
   background-color: #a855f7;
 }
+
 .bg-green-500 {
   background-color: #22c55e;
 }
+
 .bg-emerald-500 {
   background-color: #10b981;
 }
+
 .bg-amber-500 {
   background-color: #f59e0b;
 }
+
 .bg-orange-500 {
   background-color: #f97316;
 }
+
 .bg-red-500 {
   background-color: #ef4444;
 }
+
 .bg-teal-500 {
   background-color: #14b8a6;
 }
+
 .bg-yellow-400 {
   background-color: #facc15;
 }
@@ -751,24 +767,31 @@
 .bg-blue-600 {
   background-color: #2563eb;
 }
+
 .bg-indigo-600 {
   background-color: #4f46e5;
 }
+
 .bg-green-600 {
   background-color: #16a34a;
 }
+
 .bg-emerald-600 {
   background-color: #059669;
 }
+
 .bg-amber-600 {
   background-color: #d97706;
 }
+
 .bg-orange-600 {
   background-color: #ea580c;
 }
+
 .bg-red-600 {
   background-color: #dc2626;
 }
+
 .bg-teal-600 {
   background-color: #0d9488;
 }
@@ -776,6 +799,7 @@
 .text-white {
   color: #ffffff;
 }
+
 .text-gray-900 {
   color: #111827;
 }
@@ -783,9 +807,11 @@
 .border-blue-700 {
   border-color: #1d4ed8;
 }
+
 .border-emerald-800 {
   border-color: #065f46;
 }
+
 .border-yellow-600 {
   border-color: #ca8a04;
 }
